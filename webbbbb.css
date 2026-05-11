@@ -1,0 +1,274 @@
+/* ========================================= */
+/* ===== 1. RESET & PENGATURAN UMUM ======== */
+/* ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #FFF6F6;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* ========================================= */
+/* ===== 2. SIDEBAR & NAVIGASI (DESKTOP) === */
+/* ========================================= */
+.sidebar {
+    width: 90px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px; /* Memberi jarak agar menu beranda di atas tidak menabrak layar */
+    padding-bottom: 30px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.03);
+    z-index: 10;
+}
+
+/* Menyembunyikan Logo secara keseluruhan */
+.logo {
+    display: none !important;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    color: #F87171;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-item .material-symbols-outlined {
+    font-size: 28px;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-item.active { background-color: #FEE2E2; color: #c9184a; }
+.nav-item:hover { background-color: #FEF2F2; color: #c9184a; }
+
+/* ========================================= */
+/* ===== 3. KONTEN UTAMA (MAIN) ============ */
+/* ========================================= */
+.main-content {
+    flex: 1;
+    padding: 40px 60px;
+    overflow-y: auto;
+    background-color: #FFF6F6;
+}
+
+/* ===== HEADER ===== */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.subtitle {
+    opacity: 0.49; 
+    color: #FF637E; 
+    font-size: 16px; 
+    font-weight: 700; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.title-container {
+    font-size: 45px; 
+    font-family: 'Libre Caslon Text', serif;
+}
+
+.title-italic { color: #A50036; font-style: italic; font-weight: 600; }
+.title-bold { color: #A50036; font-weight: 700; }
+
+.header-right {
+    display: flex;
+    gap: 40px;
+}
+
+.info-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.info-label {
+    opacity: 0.49; 
+    color: #FF637E; 
+    font-size: 14px; 
+    font-weight: 700; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-value {
+    color: #FF637E;
+    font-size: 20px;
+    font-family: 'Libre Caslon Text', serif;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+/* ========================================= */
+/* ===== 4. GALERI 3D CAROUSEL ============= */
+/* ========================================= */
+.gallery-container {
+    position: relative;
+    width: 100%;
+    height: 400px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    position: absolute;
+    width: 250px; 
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pos-1 { transform: translateX(-120%) scale(0.7); opacity: 0.4; z-index: 1; }
+.pos-2 { transform: translateX(-60%) scale(0.85); opacity: 0.8; z-index: 2; }
+.pos-3 { transform: translateX(0) scale(1); opacity: 1; z-index: 3; box-shadow: 0 15px 25px rgba(0,0,0,0.3); }
+.pos-4 { transform: translateX(60%) scale(0.85); opacity: 0.8; z-index: 2; }
+.pos-5 { transform: translateX(120%) scale(0.7); opacity: 0.4; z-index: 1; }
+
+/* ========================================= */
+/* ===== 5. BREAKING NEWS & TEKS BAWAH ===== */
+/* ========================================= */
+.breaking-news {
+    width: 100%; 
+    color: #A50036; 
+    font-size: 30px; 
+    font-family: 'Libre Caslon Text', serif; 
+    font-style: italic; 
+    font-weight: 600; 
+    word-wrap: break-word;
+    margin-top: 30px; 
+    margin-bottom: 10px; 
+}
+
+.description-text {
+    margin-top: 20px; 
+    color: #555;
+    font-size: 14px;
+}
+
+/* ========================================= */
+/* ===== 6. TAMPILAN HP (RESPONSIVE) ======= */
+/* ========================================= */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: 70px;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-menu {
+        flex-direction: row;
+        justify-content: space-around;
+        height: 100%;
+        width: 100%;
+        gap: 0;
+    }
+    
+    .nav-item {
+        width: auto;
+        height: 100%;
+        flex: 1;
+        border-radius: 0; 
+        background-color: transparent !important;
+    }
+    
+    .nav-item.active .material-symbols-outlined {
+        background-color: #FEE2E2;
+        padding: 6px 18px;
+        border-radius: 20px;
+    }
+    
+    .main-content {
+        padding: 20px;
+        padding-bottom: 90px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .header-right {
+        gap: 20px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .gallery-container {
+        height: 320px;
+    }
+
+    .gallery-item {
+        width: 180px; 
+        height: 260px;
+    }
+
+    .breaking-news {
+        font-size: 32px;
+        text-align: center;
+    }
+}
