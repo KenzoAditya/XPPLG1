@@ -1,3 +1,4 @@
+// ===== 1. REGISTRASI SERVICE WORKER (PWA) =====
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js')
@@ -6,23 +7,25 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+// ===== 2. LOGIKA GALERI 3D CAROUSEL =====
 document.addEventListener('DOMContentLoaded', () => {
     
     const galleryItems = document.querySelectorAll('.gallery-item');
     let classes = ['pos-1', 'pos-2', 'pos-3', 'pos-4', 'pos-5'];
 
     function rotateGalleryLeft() {
-        // Logika ini mengambil elemen paling belakang dan memindahnya ke depan
-        // Efek visualnya: gambar yang di tengah akan bergeser ke kiri
+        // Logika ini mengambil elemen paling belakang (pos-5) dan memindahkannya ke urutan depan (pos-1)
+        // Efek visualnya: semua gambar akan bergeser ke arah kiri
         let lastClass = classes.pop();
         classes.unshift(lastClass);
 
+        // Memperbarui class pada setiap elemen gambar sesuai urutan array yang baru
         galleryItems.forEach((item, index) => {
             item.className = 'gallery-item ' + classes[index];
         });
     }
 
-    // Jalankan fungsi geser ke kiri setiap 3000 ms (3 detik)
+    // Menjalankan fungsi geser ke kiri setiap 3000 milidetik (3 detik)
     setInterval(rotateGalleryLeft, 3000);
 
-}); 
+});
