@@ -178,29 +178,400 @@ body {
 .pos-5 { transform: translateX(120%) scale(0.7); opacity: 0.4; z-index: 1; }
 
 /* ========================================= */
-/* ===== 5. BREAKING NEWS & TEKS BAWAH ===== */
+/* ===== 5. BREAKING NEWS SECTION ========== */
 /* ========================================= */
-.breaking-news {
-    width: 100%; 
-    color: #A50036; 
-    font-size: 30px; 
-    font-family: 'Libre Caslon Text', serif; 
-    font-style: italic; 
-    font-weight: 600; 
-    word-wrap: break-word;
-    margin-top: 30px; 
-    margin-bottom: 10px; 
+.breaking-news-section {
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 20px;
 }
 
-.description-text {
-    margin-top: 20px; 
-    color: #555;
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.news-title {
+    color: #A50036;
+    font-size: 32px;
+    font-family: 'Libre Caslon Text', serif;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.news-view-all {
+    color: #FF637E;
     font-size: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    opacity: 0.8;
+    margin-bottom: 5px; /* Menyelaraskan teks dengan judul */
+}
+
+.news-card {
+    background-color: #FFE4E8; /* Latar pink muda */
+    border-radius: 20px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.news-icon-bg {
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-icon {
+    color: #E63946; /* Ikon warna merah terang */
+    font-size: 32px;
+}
+
+.news-card-title {
+    color: #A50036;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.news-card-desc {
+    color: #c9184a;
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+
+
+/* ========================================= */
+/* ===== 6. MEMOIRE: GALERI POLAROID ======= */
+/* ========================================= */
+.memories-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.memories-title {
+    color: #A50036;
+    font-size: 36px;
+    font-family: 'Libre Caslon Text', serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.memories-subtitle {
+    color: #FF637E;
+    opacity: 0.7;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.btn-add-memory {
+    background-color: #c9184a;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(201, 24, 74, 0.3);
+    transition: transform 0.3s;
+}
+
+.btn-add-memory:hover { transform: scale(1.1); }
+
+.semester-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.semester-divider h2 {
+    color: #A50036;
+    font-family: 'Libre Caslon Text', serif;
+    font-style: italic;
+    font-size: 24px;
+}
+
+.semester-divider .line {
+    flex: 1;
+    height: 1px;
+    background-color: #FFD1D9;
+}
+
+.polaroid-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.polaroid-card {
+    background-color: white;
+    padding: 15px;
+    padding-bottom: 25px;
+    border-radius: 4px;
+    border: 1px solid #FFF0F2;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.rotate-left { transform: rotate(-3deg); }
+.rotate-right { transform: rotate(3deg); }
+
+.polaroid-card:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 5;
+    box-shadow: 0 15px 35px rgba(201, 24, 74, 0.15);
+}
+
+.polaroid-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    background-color: #f8f9fa;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.polaroid-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #ef233c;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0; 
+    transition: 0.3s;
+}
+
+.btn-delete .material-symbols-outlined { font-size: 16px; }
+.polaroid-card:hover .btn-delete { opacity: 1; }
+.btn-delete:hover { background-color: #ef233c; color: white; }
+
+.polaroid-caption {
+    font-family: 'Libre Caslon Text', serif;
+    font-style: italic;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.polaroid-meta {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #FFF0F2;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FF637E;
+    font-weight: 700;
+}
+
+
+/* ========================================= */
+/* ===== 8. MODAL FOTO FULLSCREEN ========== */
+/* ========================================= */
+.modal {
+    display: none; /* Disembunyikan sampai foto diklik */
+    position: fixed;
+    z-index: 1000; /* Pastikan selalu paling atas */
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Latar belakang hitam transparan */
+    backdrop-filter: blur(5px); /* Efek blur estetik di belakang foto */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 75vh; /* Membatasi tinggi agar tidak kepotong di layar */
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease; /* Animasi membesar */
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+    font-family: 'Libre Caslon Text', serif;
+    font-style: italic;
+    font-size: 20px;
+    animation: zoomIn 0.3s ease;
+}
+
+/* Tombol Silang (Close) */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: #FF637E;
+}
+
+/* Efek Kursor pada Gambar Polaroid */
+.polaroid-image img {
+    cursor: pointer; /* Kursor berubah jadi jari menunjuk */
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Modal Responsif di HP */
+@media (max-width: 768px) {
+    .close-modal { right: 20px; top: 10px; }
+    .modal-content { max-width: 95%; max-height: 70vh; }
 }
 
 /* ========================================= */
-/* ===== 6. TAMPILAN HP (RESPONSIVE) ======= */
+/* ===== 9. MODAL TAMBAH FOTO (FORM) ======= */
 /* ========================================= */
+.add-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px); /* Efek blur di belakang form */
+}
+
+.add-modal-content {
+    background-color: white;
+    margin: 5vh auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: zoomIn 0.3s ease;
+    
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.close-add-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #FF637E;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.add-modal-title {
+    color: #A50036;
+    font-family: 'Libre Caslon Text', serif;
+    font-style: italic;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    color: #FF637E;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #FFF0F2;
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    outline: none;
+    color: #333;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #FF637E;
+}
+
+.form-group textarea {
+    height: 80px;
+    resize: none;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #f94144;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(249, 65, 68, 0.3);
+}
+
+.btn-submit:hover {
+    background-color: #c9184a;
+}
+
+
 @media (max-width: 768px) {
     .app-container {
         flex-direction: column;
@@ -272,3 +643,4 @@ body {
         text-align: center;
     }
 }
+
