@@ -644,3 +644,148 @@ body {
     }
 }
 
+/* ========================================= */
+/* ===== 10. DESAIN ALBUM / FOLDER BARU ==== */
+/* ========================================= */
+.album-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #FFF0F2;
+    border-radius: 20px;
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+
+.album-card:hover {
+    box-shadow: 0 8px 25px rgba(201, 24, 74, 0.1);
+    transform: translateY(-2px);
+}
+
+.album-icon-box {
+    background-color: #FFE4E8;
+    color: #c9184a;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.album-icon-box .material-symbols-outlined {
+    font-size: 28px;
+}
+
+.album-info {
+    flex: 1;
+}
+
+.album-title {
+    color: #1a1a1a;
+    font-family: 'Libre Caslon Text', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.album-count {
+    color: #FF637E;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.album-arrow {
+    color: #FF637E;
+    transition: transform 0.3s ease;
+}
+
+/* Animasi Panah saat Folder Terbuka */
+.album-card.open .album-arrow {
+    transform: rotate(90deg);
+}
+
+.album-content {
+    margin-bottom: 40px;
+    padding-top: 10px;
+}
+
+/* ========================================= */
+/* ===== DESAIN ALBUM / FOLDER BARU ======== */
+/* ========================================= */
+.album-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #FFF0F2;
+    border-radius: 20px;
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+
+.album-card:hover {
+    box-shadow: 0 8px 25px rgba(201, 24, 74, 0.1);
+    transform: translateY(-2px);
+}
+
+.album-icon-box {
+    background-color: #FFE4E8;
+    color: #c9184a;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.album-icon-box .material-symbols-outlined {
+    font-size: 28px;
+}
+
+.album-info {
+    flex: 1;
+}
+
+.album-title {
+    color: #1a1a1a;
+    font-family: 'Libre Caslon Text', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.album-count {
+    color: #FF637E;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.album-arrow {
+    color: #FF637E;
+    transition: transform 0.3s ease;
+}
+
+/* Animasi Panah saat Folder Terbuka */
+.album-card.open .album-arrow {
+    transform: rotate(90deg);
+}
+
+.album-content {
+    margin-bottom: 40px;
+    padding-top: 10px;
+}
